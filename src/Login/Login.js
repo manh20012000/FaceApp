@@ -18,26 +18,26 @@ const Login = ({ navigation }) => {
   const [matkhau, setPass] = useState('');
   const [loading, setLoading] = useState(false);
   const login = async () => {
-    try {
-      const { data } = await axios.post('https://muddy-teddy-fawn.cyclic.app/api/login', { taikhoan: taikhoan, matkhau: matkhau })
-      if (data.status == 200) {
-        console.log(typeof (data.status)+'')
-        setLoading(true);
-        // Giả sử rằng việc đăng nhập mất 2 giây
-        setTimeout(() => {
-          setLoading(false);
+    // try {
+      // const { data } = await axios.post('https://muddy-teddy-fawn.cyclic.app/api/login', { taikhoan: taikhoan, matkhau: matkhau })
+      // if (data.status == 200) {
+      //   console.log(typeof (data.status)+'')
+      //   setLoading(true);
+      //   // Giả sử rằng việc đăng nhập mất 2 giây
+      //   setTimeout(() => {
+      //     setLoading(false);
           navigation.navigate('Home');
           setPass('');
           setName('');
           // Sau đó, điều hướng đến trang Home
-        }, 2000);
-      }
-      else if(data.status==400){
-        alert('dang nhập thất bại')
-      }
-    } catch (eror) {
-    alert('đăng nhập thất bại')
-    }
+    //     }, 2000);
+    //   }
+    //   else if(data.status==400){
+    //     alert('dang nhập thất bại')
+    //   }
+    // } catch (eror) {
+    // alert('đăng nhập thất bại')
+    // }
   }
   const [hienthi, setHienthi] = useState(true);
 

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-const GioHang = ({ navigation }) => {
+const Message = ({ navigation }) => {
   return (
     <View style={styles.contain}>
 
@@ -35,7 +35,7 @@ const GioHang = ({ navigation }) => {
     </View>
   )
 }
-export default GioHang;
+export default Message;
 const styles = StyleSheet.create({
   contain: {
     flex: 1,

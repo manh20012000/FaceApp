@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreenHome from '../Home/ScreenHome/ScreenHome.js';
-import GioHang from '../Home/GioHang/GioHang.js';
+import GioHang from '../Home/GioHang/Message.js';
 import Infor from '../Home/Information/Infor.js';
 import Login from '../Login/Login.js';
 import SeeDeTail from '../Home/TrangChu/SeeDeTail.js';
@@ -41,20 +41,20 @@ const Navigete = () => {
           component={SeeDeTail}
 
         />
-      
+
         <Stack.Screen
           name='dangky'
           component={Dangky}
         />
-         <Stack.Screen
+        <Stack.Screen
           name='ThemInfor'
           component={AddInfor}
         />
-          <Stack.Screen
+        <Stack.Screen
           name='Timkiem'
           component={Timkiem}
         />
-      
+
       </Stack.Navigator>
     </NavigationContainer>
   )

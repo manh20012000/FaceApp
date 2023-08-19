@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Modal} from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const styles = StyleSheet.create({
@@ -8,19 +8,35 @@ const styles = StyleSheet.create({
         width:'100%',
         height:"100%",
         marginTop:7,
-        marginHorizontal:3,
-        justifyContent:'center',
-        alignItems:'center'
-    
+        marginHorizontal:3
     },
-    image:{
-       flex:1,
-       backgroundColor:'green',
-    
-    },Infor:{
-        flex:2,
-        marginLeft:5
+    title:{
+        fontSize:25,
+        fontWeight:'900',
+        
+    },
+    bodyView:{
+          width:400,
+           height:450,
+           marginHorizontal:10,
+
+    }, 
+    bodyView2:{
+       marginHorizontal:20,
+       justifyContent:'space-between',
+       flexDirection:'row',
+    },
+    titleTxt:{
+        fontSize:17,
+        fontWeight:'500'
+    },
+    detail:{
+          right:15,
+        backgroundColor:'white',
+        width:105,
+        height:30,
+        alignItems:'center',
+        borderRadius:20,
     }
- 
 })
 export default styles;

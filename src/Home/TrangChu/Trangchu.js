@@ -5,38 +5,44 @@ import FlatItem from './FlatItem.js'
 import styles from './StyleTrangchu.js'
 import SeeDeTail from './SeeDeTail.js'
 import { Feather } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 const TrangChu = ({ navigation }) => {
   const [data, setData] = useState(DataOjs);
-    
   return (
-
     <View style={styles.container}>
-      <TouchableOpacity style={{
-        width: 340, backgroundColor: 'white', marginHorizontal:15,marginVertical:10, borderRadius: 40,
-        padding: 8, flexDirection: 'row',
-        justifyContent: 'space-between'         
-      }}
-        onPress={()=>{
-                 navigation.navigate('Timkiem')
-        }}
-      >
-            <Text> nhập tìm kiếm </Text>
-             <Feather name="search" size={24} color="black" />
       
-       
-      </TouchableOpacity>
-        <FlatList
-          data={data}
-          renderItem={({ item, index }) => {
-            return (
-
-              <FlatItem item={item} index={index} navigation={navigation}
-                setData={setData} data={data}
-              />
-            )
+      <View style={{ justifyContent: 'space-around',flexDirection:'row',alignItems:'center'}}>
+        <TouchableOpacity style={{
+          width: 340, backgroundColor: 'white', marginHorizontal: 15, marginVertical: 10, borderRadius: 40,
+          padding: 8, flexDirection: 'row',
+          justifyContent: 'space-between'
+        }}
+          onPress={() => {
+            navigation.navigate('Timkiem')
           }}
         >
-        </FlatList>
+          <Text> nhập tìm kiếm </Text>
+          <Feather name="search" size={24} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <AntDesign name="bells" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
+
+      <View>
+      </View>
+    
+      <FlatList
+        data={data}
+        renderItem={({ item, index }) => {
+          return (
+            <FlatItem item={item} index={index} navigation={navigation}
+              setData={setData} data={data}
+            />
+          )
+        }}
+      >
+      </FlatList>
     </View>
   )
 }
