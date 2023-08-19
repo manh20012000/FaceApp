@@ -1,0 +1,15 @@
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/CMakeFiles/appmodules.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/RNImagePickerSpec_autolinked_build/CMakeFiles/react_codegen_RNImagePickerSpec.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/RNImagePickerSpec_autolinked_build/CMakeFiles/edit_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/RNImagePickerSpec_autolinked_build/CMakeFiles/rebuild_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
+D:/laptrinhMobile/NativeApp/android/app/.cxx/Debug/6p6q6741/arm64-v8a/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir

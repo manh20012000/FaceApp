@@ -11,22 +11,25 @@ const styles = StyleSheet.create({
           ,body:{
             marginTop:6,
             flex:1,
+            backgroundColor:'pink'
           },
           anhBiaf:{
             width:'100%',
             backgroundColor:'white',
-            height:'40%'
+            height:200,
+            justifyContent:'center',
+            alignItems:'center'
           },
           giaBan:{
             backgroundColor:'orange',
             width:'100%',
-            height:'8%',
+            height:40,
             flexDirection:'row',
             alignItems:'center',justifyContent:'space-around'
           },
           QuangCao:{
             width:'100%',
-            height:'10%',
+            height:120,
             backgroundColor:'white',
          },cmt:{
             width:'100%',
@@ -42,6 +45,16 @@ const styles = StyleSheet.create({
              justifyContent:'space-around',
              alignItems:'center',
              backgroundColor:'#FFFFCC'
+         },
+         comment:{
+          backgroundColor:'white'
+         },
+         luachon:{
+          backgroundColor:'#FF6600',
+          padding:10,
+         flexDirection:'row',
+           
+         alignItems:'center',
          }
 })
 export default styles;

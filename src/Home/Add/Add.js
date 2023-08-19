@@ -7,40 +7,62 @@ import { AntDesign } from '@expo/vector-icons';
 import DropdownComponent from './DropDow.js';
 import PhanLoai from './Phanloai.js';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
-
+import * as ImagePicker from 'react-native-image-picker';
 const Add = ({ navigation }) => {
-  const [img,setImage]=useState('')
- const requestCameraPemisson = async () => {
+  const [img, setImage] = useState('')
+  const requestCameraPemisson = async () => {
     try {
-      const checkPemission = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA);
+      const checkPemission = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA,
+        {
+          title: 'Cool Photo App Camera Permission',
+          message:
+            'Cool Photo App needs access to your camera ' +
+            'so you can take awesome pictures.',   buttonNeutral: 'Ask Me Later',   buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
       if (checkPemission === PermissionsAndroid.RESULTS.GRANTED) {
-      // mỏ cam
-        // console.log('oki')
-        // const result:any= await launchCamera({ mediaType:'mixed',cameraType: 'front' });// chonj mowx camera truwocs 
+        // mỏ cam
+        console.log('oki')
+        const result:any= await  ImagePicker.launchCamera({ mediaType:'photo',cameraType: 'front' });// chonj mowx camera truwocs 
         // console.log(result.assets.uri+'11112')
-        const result:any= await launchImageLibrary({ mediaType:'photo',selectionLimit:10});// chonj mowx camera truwocs 
+        // const result: any = await ImagePicker.launchImageLibrary({noData: true,
+        //   mediaType: 'photo',
+        //   includeBase64: false,
+        //   maxHeight: 200,
+        //   maxWidth: 200,
+        // }, (response) => {
+        //   console.log(response);
+        //   this.setState({
+        //     resourcePath: response
+        //   });
+        // });
+
+        // chonj mowx camera truwocs 
         setImage(result.assets[0].uri);
       } else {
         console.log('tu chối');
       }
     } catch (error) {
-      console.log('dbdsbdh')
-      console.log(error+"jsndj" );
+      console.log(error + "jsndj");
     }
   }
 
   return (
 
     <ScrollView style={styles.container}>
-      <TouchableOpacity style={{ paddingRight: 10, flexDirection: 'row' }}><Ionicons name="arrow-back" size={34} color="black" />
+      <TouchableOpacity
+
+        style={{ paddingRight: 10, flexDirection: 'row' }}>
+        <Ionicons name="arrow-back" size={34} color="black" />
         <Text style={{ fontSize: 22, fontWeight: '600' }}> Them san phẩm </Text>
       </TouchableOpacity>
       <View style={{ width: '100%', backgroundColor: 'white', }}>
-          {img!=''?  <Image source={{uri:img}}
-            style={{width:160,height:160}}></Image>:''
-          }
-        
-       
+        {img != '' ? <Image source={{ uri: img }}
+          style={{ width: 160, height: 160 }}></Image> : ''
+        }
+
+
       </View>
       <TouchableOpacity style={styles.themanh}
         onPress={requestCameraPemisson}
@@ -78,6 +100,9 @@ const Add = ({ navigation }) => {
         <TouchableOpacity style={{ flex: 1, backgroundColor: '#F2561D', height: '100%', justifyContent: 'center', marginLeft: 5, alignItems: 'center', }}>
           <Text style={{ fontSize: 18 }}> Đồng ý</Text>
         </TouchableOpacity>
+      </View>
+      <View style={{ marginTop: 8 }}>
+
       </View>
     </ScrollView >
   )

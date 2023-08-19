@@ -3,13 +3,13 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreenHome from '../Home/ScreenHome/ScreenHome.js';
-import Danhmuc from '../Home/Danhmuc/Danhmuc.js';
 import GioHang from '../Home/GioHang/GioHang.js';
 import Infor from '../Home/Information/Infor.js';
 import Login from '../Login/Login.js';
 import SeeDeTail from '../Home/TrangChu/SeeDeTail.js';
 import Dangky from '../Login/Dangky.js';
 import AddInfor from '../Home/Information/AddInfor.js';
+import Timkiem from '../Home/TrangChu/Timkiem.js';
 export const NameScreen = {
   SCREEN_Home: 'Home',
   SCREEN_Login: 'Login',
@@ -49,6 +49,10 @@ const Navigete = () => {
          <Stack.Screen
           name='ThemInfor'
           component={AddInfor}
+        />
+          <Stack.Screen
+          name='Timkiem'
+          component={Timkiem}
         />
       
       </Stack.Navigator>

@@ -6,9 +6,8 @@ import { FontAwesome, EvilIcons, AntDesign } from '@expo/vector-icons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SeeDeTail from './SeeDeTail.js';
 import Navigete from '../../navigate/Navigate.js';
-
-// import BottomSheet, { BottomSheetTextInput } from "@gorhom/bottom-sheet";
 const FlatItem = (props) => {
+
   const numberLike = props.item.like;
   const binhluan = props.item.comment;
   const [isLiked, setIsLiked] = useState(false);
@@ -37,7 +36,7 @@ const FlatItem = (props) => {
   const DetaiHandress = () => {
     const gtri = props.index
     // su kien nhan vao see detail
-    props.navigation.navigate('SeeDeTail', props);
+    props.navigation.navigate('SeeDeTail', props.item);
     return <SeeDeTail />
   }
   //   }
@@ -45,11 +44,18 @@ const FlatItem = (props) => {
   return (
    
     <View style={styles.contain}>
-      {/* {reanderModal()} */}
+   
       <TouchableOpacity
         onPress={DetaiHandress}
         style={{ backgroundColor: 'white', width: '95%', height: 140, justifyContent: 'center', flexDirection: 'row' }}>
-        <View style={styles.image}><Text>img</Text></View>
+        <View style={styles.image}>
+        <Image 
+             style={{width:150,height:150}}
+           source={{
+                  uri:props.item.image
+                      }}
+           ></Image>
+        </View>
         <View style={styles.Infor}>
           <View style={{ flex: 2, backgroundColor: 'green' }}>
             <Text style={{ fontSize: 15 }}>thong tin gioi thiêu mô ta </Text>

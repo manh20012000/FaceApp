@@ -7,27 +7,26 @@ import SeeDeTail from './SeeDeTail.js'
 import { Feather } from '@expo/vector-icons';
 const TrangChu = ({ navigation }) => {
   const [data, setData] = useState(DataOjs);
-
+    
   return (
 
     <View style={styles.container}>
-      <View style={{
-        width: 340, backgroundColor: 'white', margin: 10, borderRadius: 40,
+      <TouchableOpacity style={{
+        width: 340, backgroundColor: 'white', marginHorizontal:15,marginVertical:10, borderRadius: 40,
         padding: 8, flexDirection: 'row',
-        justifyContent: 'space-between'
-
-      }}>
-        <TextInput
-          placeholder="Tim kiem"
-          style={{ fontSize: 18, width: '75%' }}
-        >
-
-        </TextInput>
-        <Feather name="search" size={24} color="black" />
-      </View>
+        justifyContent: 'space-between'         
+      }}
+        onPress={()=>{
+                 navigation.navigate('Timkiem')
+        }}
+      >
+            <Text> nhập tìm kiếm </Text>
+             <Feather name="search" size={24} color="black" />
+      
+       
+      </TouchableOpacity>
         <FlatList
           data={data}
-
           renderItem={({ item, index }) => {
             return (
 

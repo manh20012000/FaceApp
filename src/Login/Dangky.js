@@ -14,18 +14,22 @@ import { AntDesign, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { RadioButton } from 'react-native-paper';
 
-
 const Dangky = ({ navigation }) => {   
 
   // lấy gtri cua cac o text;
      const [email, setMail] = useState('');
-     const [name, setName] = useState('');
-     const [pass, setPass] = useState('');
+     const [taikhoan, setName] = useState('');
+     const [matkhau, setPass] = useState('');
      const [passC, setPassC] = useState('');
      const Sigin=async()=>{
-      try {
-        const inSertSign = await axios.post('https://muddy-teddy-fawn.cyclic.app/api/login', { email: email, name:name,password:pass})
-         if(inSertSign.status===200){
+
+         if(matkhau===passC){
+  
+       try {
+        const data = await axios.post('https://muddy-teddy-fawn.cyclic.app/api/sigin', {taikhoan:taikhoan,matkhau:matkhau,email: email})
+          
+       
+        if(data.status===200){
             navigation.navigate('Login');
             setMail(''),
             setName('');
@@ -35,9 +39,13 @@ const Dangky = ({ navigation }) => {
           alert('dang ky that bai')
          }
   
-      } catch (eror) {
-        console.log(eror)
+      } catch (error) {
+    console.log(error+'   that bai')
       }
+    }else{
+      alert('mật khẩu xác nhận ko chính xác')
+    }
+     
      }
      
   // tao check hien thi với radio button
@@ -88,23 +96,23 @@ const Dangky = ({ navigation }) => {
           <TextInput
             placeholder="nhap tai khoan"
             style={[styles.textinput, styles.txt1]}
-             value={name}
-            onChangeText={setPass}
+             value={taikhoan}
+            onChangeText={setName}
 
           />
           <TextInput
             placeholder="nhap matkhau"
             secureTextEntry={hienthi}
             style={[styles.textinput, styles.txt1]}
-            value={pass}
-            onChangeText={() => setPass}
+            value={matkhau}
+            onChangeText={setPass}
           />
           <TextInput
             placeholder="confilm matkhau"
             secureTextEntry={hienthi}
             style={[styles.textinput, styles.txt1]}
             value={passC}
-            onChangeText={() => setPass}
+            onChangeText={setPassC}
 
           />
           <View style={{flexDirection:'row',}}> 

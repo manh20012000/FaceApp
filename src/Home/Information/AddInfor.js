@@ -8,8 +8,8 @@ const AddInfor = () => {
              
       </View> 
      <View style={{width:"100%",height:'20%',justifyContent:'center',alignItems:'center'}}>
-              <TouchableOpacity style={{width:30,height:30,borderRadius:20,backgroundColor:'#6C7B8B'}}>
-                <Text>sửa</Text>
+              <TouchableOpacity style={{width:100,height:100,borderRadius:100,backgroundColor:'#6C7B8B',justifyContent:'flex-end',alignItems:'center'}}>
+                <Text style={{color:'white',fontSize:17}}>sửa</Text>
               </TouchableOpacity>
              </View>
            <View>

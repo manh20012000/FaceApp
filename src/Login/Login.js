@@ -18,36 +18,31 @@ const Login = ({ navigation }) => {
   const [matkhau, setPass] = useState('');
   const [loading, setLoading] = useState(false);
   const login = async () => {
-
     try {
-      // const dataLog = await axios.post('https://muddy-teddy-fawn.cyclic.app/api/login', { taikhoan: taikhoan, matkhau: matkhau })
-      // console.log(dataLog)
-      // if (dataLog.status == 200) {
-      //   console.log(typeof (dataLog.status))
-      //   setLoading(true);
-      //   // Giả sử rằng việc đăng nhập mất 2 giây
+      const { data } = await axios.post('https://muddy-teddy-fawn.cyclic.app/api/login', { taikhoan: taikhoan, matkhau: matkhau })
+      if (data.status == 200) {
+        console.log(typeof (data.status)+'')
+        setLoading(true);
+        // Giả sử rằng việc đăng nhập mất 2 giây
         setTimeout(() => {
           setLoading(false);
           navigation.navigate('Home');
           setPass('');
           setName('');
           // Sau đó, điều hướng đến trang Home
-
         }, 2000);
-      // }
-      // else {
-      //   alert('dang nhập thất bại')
-      // }
-
+      }
+      else if(data.status==400){
+        alert('dang nhập thất bại')
+      }
     } catch (eror) {
-      console.log(eror)
+    alert('đăng nhập thất bại')
     }
   }
   const [hienthi, setHienthi] = useState(true);
 
   const anhien = () => {
     setHienthi(!hienthi);
-
   }
 // nhap form ddnag kys 
    const sigin=()=>{
@@ -80,7 +75,7 @@ const Login = ({ navigation }) => {
               placeholder="nhap pass word"
               style={styles.textinput}
               secureTextEntry={hienthi}
-              titleAler='vui long nhap thong tin chinh sac'
+              titleAler='vui long nhap thong tin chnh sac'
               value={matkhau}
               onChangeText={(matkhau) =>{setPass(matkhau)} }
             />
